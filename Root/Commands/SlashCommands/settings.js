@@ -1,5 +1,6 @@
 const { Client, CommandInteraction, MessageEmbed, Message } = require("discord.js");
 const config = require("../../../Config");
+const db = require("../../Structures/Models/SettingsDB")
 
 module.exports = {
     name: "settings",
