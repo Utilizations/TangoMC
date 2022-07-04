@@ -12,6 +12,8 @@ module.exports = {
         .setDescription(`
         Welcome ${guildMember} to **TangoMC**
         `)
+        log1 = message.guild.channels.cache.get(config.welcomeChannel)
+        log.send({embeds: [welcomeembed]})
         guildMember.roles.add(config.memberRole)
     }
 }
