@@ -24,22 +24,15 @@ module.exports = {
             required: true,
         },
         {
-            name: "options",
-            description: "Embed Options",
-            required: true,
-            options: [
-                {
-                    name: "logo",
-                    description: "Would you like the logo? (y/n)",
-                    type: "STRING",
-                },
-                {
-                    name: "banner",
-                    description: "Would you like the logo? (y/n)",
-                    type: "STRING",
-                },
-            ]
-        }
+            name: "logo",
+            description: "Would you like the logo? (y/n)",
+            type: "STRING",
+        },
+        {
+            name: "banner",
+            description: "Would you like the logo? (y/n)",
+            type: "STRING",
+        },
     ],
     /**
      * 
