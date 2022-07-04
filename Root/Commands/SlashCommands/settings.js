@@ -13,17 +13,17 @@ module.exports = {
                 {
                     name: "ticketcategory",
                     description: "Set the ticket Category",
-                    required: true
+                    type: "STRING"
                 },
                 {
                     name: "ticketopen",
                     description: "Set the ticket open-channel",
-                    required: true
+                    type: "STRING"
                 },
                 {
                     name: "ticketlogs",
                     description: "Set the ticket logs channel.",
-                    required: true
+                    type: "STRING"
                 },
             ]
         },
@@ -35,7 +35,7 @@ module.exports = {
                 {
                     name: "suggestionchannel",
                     description: "Set the suggestions channel",
-                    required: true
+                    type: "STRING"
                 },
             ]
         },
@@ -47,22 +47,22 @@ module.exports = {
                 {
                     name: "logchannel",
                     description: "Set the log channel.",
-                    required: true
+                    type: "STRING"
                 },
                 {
                     name: "welcomechannel",
                     description: "Set the welcome channel.",
-                    required: true
+                    type: "STRING"
                 },
                 {
                     name: "serverlogo",
                     description: "Set the servers logo.",
-                    required: true
+                    type: "STRING"
                 },
                 {
                     name: "serverbanner",
                     description: "Set the servers banner.",
-                    required: true
+                    type: "STRING"
                 },
             ]
         },
