@@ -95,16 +95,16 @@ module.exports = {
                             Content: [
                                 {
                                     TicketCategory: ticketcat,
-                                    TicketCategory: ticketopen,
-                                    TicketCategory: ticketlog,
+                                    TicketOpen: ticketopen,
+                                    TicketLogs: ticketlog,
                                 }
                             ],
                         })
                     } else {
                         const obj = {
                             TicketCategory: ticketcat,
-                            TicketCategory: ticketopen,
-                            TicketCategory: ticketlog,
+                            TicketOpen: ticketopen,
+                            TicketLogs: ticketlog,
                         }
                         data.Content.push(obj)
                     }
