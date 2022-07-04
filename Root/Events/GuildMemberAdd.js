@@ -1,5 +1,6 @@
 const discord = require("discord.js")
 const config = require("../../Config")
+const invites = new Collection();
 
 module.exports = {
     name: "guildMemberAdd",
@@ -12,9 +13,9 @@ module.exports = {
         // This is just to simplify the message being sent below (inviter doesn't have a tag property)
         const inviter = await client.users.fetch(invite.inviter.id);
         // Get the log channel (change to your liking)
-        inviter
-            ? logChannel.send(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} times since its creation.`)
-            : logChannel.send(`${member.user.tag} joined but I couldn't find through which invite.`);
+        //inviter
+        //    ? logChannel.send(`${member.user.tag} joined using invite code ${invite.code} from ${inviter.tag}. Invite was used ${invite.uses} times since its creation.`)
+        //    : logChannel.send(`${member.user.tag} joined but I couldn't find through which invite.`);
 
         const welcomeembed = new discord.MessageEmbed()
         .setAuthor({name: `${config.serverName} Welcome!`, iconURL: config.serverIcon})
