@@ -7,7 +7,7 @@ const options = {
 };
 
 module.exports = {
-    name: "help",
+    name: "mcstatus",
     run: async(client, message, args, container) => {
         message.delete()
         util.status('51.195.224.70:', 7000, options)
