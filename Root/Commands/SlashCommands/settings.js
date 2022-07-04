@@ -89,13 +89,26 @@ module.exports = {
         switch(Sub) {
             case "tickets" : {
                 db.findOne({ GuildID: interaction.guild.id }, async (err, data) => {
-                const obj = {
-                    TicketCategory: ticketcat,
-                    TicketCategory: ticketopen,
-                    TicketCategory: ticketlog,
-                }
-                data.Content.push(obj)
-                data.save()
+                    if(!data) {
+                        data = new db({
+                            GuildID: interaction.guild.id,
+                            Content: [
+                                {
+                                    TicketCategory: ticketcat,
+                                    TicketCategory: ticketopen,
+                                    TicketCategory: ticketlog,
+                                }
+                            ],
+                        })
+                    } else {
+                        const obj = {
+                            TicketCategory: ticketcat,
+                            TicketCategory: ticketopen,
+                            TicketCategory: ticketlog,
+                        }
+                        data.Content.push(obj)
+                    }
+                    data.save()
                 interaction.reply("Done")
                 })
             }
@@ -103,25 +116,52 @@ module.exports = {
 
             case "suggestions" : {
                 db.findOne({ GuildID: interaction.guild.id }, async (err, data) => {
-                const obj = {
-                    SuggestionChannel: sugchannel,
-                }
-                data.Content.push(obj)
-                data.save()
+                    if(!data) {
+                        data = new db({
+                            GuildID: interaction.guild.id,
+                            Content: [
+                                {
+                                    SuggestionChannel: sugchannel,
+                                }
+                            ],
+                        })
+                    } else {
+                        const obj = {
+                            SuggestionChannel: sugchannel,
+                        }
+                        data.Content.push(obj)
+                    }
+                    data.save()
+                interaction.reply("Done")
                 })
             }
             break;
 
             case "misc" : {
                 db.findOne({ GuildID: interaction.guild.id }, async (err, data) => {
-                const obj = {
-                    LogChannel: logchannel,
-                    WelcomeChannel: welcomechannel,
-                    ServerLogo: serverlogo,
-                    ServerBanner: serverbanner,
-                }
-                data.Content.push(obj)
-                data.save()
+                    if(!data) {
+                        data = new db({
+                            GuildID: interaction.guild.id,
+                            Content: [
+                                {
+                                    LogChannel: logchannel,
+                                    WelcomeChannel: welcomechannel,
+                                    ServerLogo: serverlogo,
+                                    ServerBanner: serverbanner,
+                                }
+                            ],
+                        })
+                    } else {
+                        const obj = {
+                            LogChannel: logchannel,
+                            WelcomeChannel: welcomechannel,
+                            ServerLogo: serverlogo,
+                            ServerBanner: serverbanner,
+                        }
+                        data.Content.push(obj)
+                    }
+                    data.save()
+                interaction.reply("Done")
                 })
             }
             break;
