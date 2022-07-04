@@ -43,7 +43,7 @@ module.exports = {
             break;
             case "guildMemberRemove" : {
             client.emit("guildMemberRemove", interaction.member);
-            interaction.reply({content: "Emitted the event.", ephemeral: true})
+            interaction.reply({content: "wedawdawd the event.", ephemeral: true})
             }
             break;
         }
