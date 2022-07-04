@@ -2,7 +2,7 @@ const { Client, CommandInteraction, MessageEmbed, Message } = require("discord.j
 const config = require("../../../../Config");
 
 module.exports = {
-    name: "createEmbed",
+    name: "createembed",
     description: "fetch's the id of target member.",
     options: [
         {
@@ -27,11 +27,13 @@ module.exports = {
             name: "logo",
             description: "Would you like the logo? (y/n)",
             type: "STRING",
+            required: true,
         },
         {
             name: "banner",
             description: "Would you like the logo? (y/n)",
             type: "STRING",
+            required: true,
         },
     ],
     /**
