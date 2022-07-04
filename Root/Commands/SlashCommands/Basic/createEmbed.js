@@ -26,7 +26,6 @@ module.exports = {
         {
             name: "options",
             description: "Embed Options",
-            type: "STRING",
             required: true,
             options: [
                 {
