@@ -21,7 +21,6 @@ module.exports = {
             name: "footer",
             description: "Embed Footer",
             type: "STRING",
-            required: true,
         },
         {
             name: "logo",
