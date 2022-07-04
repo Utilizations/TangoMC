@@ -87,6 +87,7 @@ module.exports = {
 
         switch(Sub) {
             case "tickets" : {
+                db.findOne({ GuildID: interaction.guild.id }, async (err, data) => {
                 const obj = {
                     TicketCategory: ticketcat,
                     TicketCategory: ticketopen,
@@ -94,19 +95,24 @@ module.exports = {
                 }
                 data.Content.push(obj)
                 data.save()
+                interaction.reply("Done")
+                })
             }
             break;
 
             case "suggestions" : {
+                db.findOne({ GuildID: interaction.guild.id }, async (err, data) => {
                 const obj = {
                     SuggestionChannel: sugchannel,
                 }
                 data.Content.push(obj)
                 data.save()
+                })
             }
             break;
 
             case "misc" : {
+                db.findOne({ GuildID: interaction.guild.id }, async (err, data) => {
                 const obj = {
                     LogChannel: logchannel,
                     WelcomeChannel: welcomechannel,
@@ -115,6 +121,7 @@ module.exports = {
                 }
                 data.Content.push(obj)
                 data.save()
+                })
             }
             break;
         }
