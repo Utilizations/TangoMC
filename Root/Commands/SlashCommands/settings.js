@@ -74,21 +74,54 @@ module.exports = {
      */
      run: async(client, interaction, container) => {
         //const choices = interaction.options.getString("member");
-        const ticketcat = interaction.options.getString("ticketcategory");
-        const ticketopen = interaction.options.getString("ticketopen");
-        const ticketlog = interaction.options.getString("ticketlogs");
-        const sugchannel = interaction.options.getString("suggestionchannel");
-        const logchannel = interaction.options.getString("logchannel");
-        const welcomechannel = interaction.options.getString("welcomechannel");
-        const serverlogo = interaction.options.getString("serverlogo");
-        const serverbanner = interaction.options.getString("serverbanner");
+        const ticketcat = interaction.options.getString("ticketcategory") || "N/A";
+        const ticketopen = interaction.options.getString("ticketopen") || "N/A";
+        const ticketlog = interaction.options.getString("ticketlogs") || "N/A";
+        const sugchannel = interaction.options.getString("suggestionchannel") || "N/A";
+        const logchannel = interaction.options.getString("logchannel") || "N/A";
+        const welcomechannel = interaction.options.getString("welcomechannel") || "N/A";
+        const serverlogo = interaction.options.getString("serverlogo") || "N/A";
+        const serverbanner = interaction.options.getString("serverbanner") || "N/A";
 
         const Sub = interaction.options.getSubcommand();
 
         switch(Sub) {
             case "tickets" : {
-
+                const obj = {
+                    TicketCategory: ticketcat,
+                    TicketCategory: ticketopen,
+                    TicketCategory: ticketlog,
+                }
+                data.Content.push(obj)
+                data.save()
             }
+            break;
+
+            case "suggestions" : {
+                const obj = {
+                    SuggestionChannel: sugchannel,
+                }
+                data.Content.push(obj)
+                data.save()
+            }
+            break;
+
+            case "misc" : {
+                const obj = {
+                    LogChannel: logchannel,
+                    WelcomeChannel: welcomechannel,
+                    ServerLogo: serverlogo,
+                    ServerBanner: serverbanner,
+                }
+                data.Content.push(obj)
+                data.save()
+            }
+            break;
         }
+    }, catch (e) {
+        const errorEmbed = new MessageEmbed()
+        .setColor("RED")
+        .setDescription(`⛔ Alert: ${e}`)
+        return interaction.reply({embeds: [errorEmbed]});
     }
 }
