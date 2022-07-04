@@ -43,8 +43,8 @@ module.exports = {
      run: async(client, interaction, container) => {
         //const choices = interaction.options.getString("member");
         const Logo = interaction.options.getString("logo");
-        const Title = interaction.options.getString("title").join("/n");
-        const Description = interaction.options.getString("description");
+        const Title = interaction.options.getString("title");
+        const Description = interaction.options.getString("description").replaceAll(";", "\n");
         const Footer = interaction.options.getString("footer") || "N/A";
         const Banner = interaction.options.getString("banner");
 
