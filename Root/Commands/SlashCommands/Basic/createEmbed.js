@@ -18,11 +18,6 @@ module.exports = {
             required: true,
         },
         {
-            name: "footer",
-            description: "Embed Footer",
-            type: "STRING",
-        },
-        {
             name: "logo",
             description: "Would you like the logo? (y/n)",
             type: "STRING",
@@ -34,6 +29,11 @@ module.exports = {
             type: "STRING",
             required: true,
         },
+        {
+            name: "footer",
+            description: "Embed Footer",
+            type: "STRING",
+        }
     ],
     /**
      * 
