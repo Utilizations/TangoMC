@@ -1,6 +1,6 @@
 const discord = require("discord.js")
 const config = require("../../Config")
-const invites = new Collection();
+const invites = new discord.Collection();
 
 module.exports = {
     name: "guildMemberAdd",
