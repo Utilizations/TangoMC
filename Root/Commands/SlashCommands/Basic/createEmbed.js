@@ -13,7 +13,7 @@ module.exports = {
         },
         {
             name: "description",
-            description: "Embed Description",
+            description: "Embed Description just put ; to start a new line",
             type: "STRING",
             required: true,
         },
