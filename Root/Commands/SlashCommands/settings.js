@@ -1,5 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed, Message } = require("discord.js");
-const config = require("../../../../Config");
+const config = require("../../../Config");
 
 module.exports = {
     name: "settings",
@@ -79,7 +79,7 @@ module.exports = {
 
         switch(Sub) {
             case "tickets" : {
-                
+
             }
         }
     }
