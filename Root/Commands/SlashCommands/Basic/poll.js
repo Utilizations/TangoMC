@@ -70,38 +70,40 @@ module.exports = {
             c5 = interaction.options.getString('choice5');
             c6 = interaction.options.getString('choice6');
             const pollCreateEmbed = new MessageEmbed()
-                .setTitle(title)
+            .setAuthor({name: `${config.serverName} Poll's`, iconURL: config.serverIcon})
+            .setDescription(title)
                 .setColor("DARK_BUT_NOT_BLACK")
                 .addFields(
-                    { value: '\u200b', name: c1,
+                    { value: '1️⃣', name: c1,
                         },
-                    { value: '\u200b',
+                    { value: '2️⃣',
                         name: c2 }
                 )
-                .setFooter(`Poll By ${interaction.user.tag}`)
+                .setThumbnail(config.serverIcon)
+                .setImage(config.serverBanner)
                 .setTimestamp();
 
             if (interaction.options.getString('choice3')) {
                 pollCreateEmbed.addFields({
-                   value: '\u200b',
+                   value: '3️⃣',
                     name: c3, 
                 });
             }
             if (interaction.options.getString('choice4')) {
                 pollCreateEmbed.addFields({
-                    value: '\u200b',
+                    value: '4️⃣',
                     name: c4,
                 });
             }
             if (interaction.options.getString('choice5')) {
                 pollCreateEmbed.addFields({
-                   value: '\u200b',
+                   value: '5️⃣',
                    name: c5
                 });
             }
             if (interaction.options.getString('choice6')) {
                 pollCreateEmbed.addFields({
-                    value: '\u200b',
+                    value: '6️⃣',
                     name: c6,
                 });
             }
