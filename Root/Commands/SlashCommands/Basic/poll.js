@@ -1,4 +1,5 @@
-const { MessageEmbed } = require('discord.js');
+const { Client, CommandInteraction, MessageEmbed, Message } = require("discord.js");
+const config = require("../../../../Config");
 
 module.exports = {
     name: 'poll',
@@ -54,7 +55,12 @@ module.exports = {
             ],
         },
     ],
-    async execute(interaction) {
+    /**
+     * 
+     * @param {Client} client 
+     * @param {CommandInteraction} interaction 
+     */
+     run: async(client, interaction, container) => {
         if (interaction.options.getSubcommand() == 'create') {
             title = interaction.options.getString('title');
             c1 = interaction.options.getString('choice1');
@@ -128,4 +134,4 @@ module.exports = {
         .setDescription(`⛔ Alert: ${e}`)
         return interaction.reply({embeds: [errorEmbed]});
     }
-};
+}
