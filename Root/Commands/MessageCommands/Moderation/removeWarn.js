@@ -7,7 +7,7 @@ module.exports = {
     userPermissions: ["MANAGE_MESSAGES"],
     run: async(client, message, args, container) => {
         Target = message.mentions.members.size === 1 ? message.mentions.members.first() : message.guild.members.cache.get(args[0])
-        const WarnID = args[1];
+        const WarnID = args[1] - 1;
         const WarnDate = new Date(message.createdTimestamp).toLocaleDateString();
         message.delete()
         if (!Target) {
