@@ -12,9 +12,6 @@ module.exports = {
         message.delete()
         if (!Target) {
             message.channel.send({embeds: [new Discord.MessageEmbed().setDescription("This command has been entered incorrectly. Please use **removeWarn [@user][WarnID]**")]})
-        }
-        if (!WarnID) {
-            message.channel.send({embeds: [new Discord.MessageEmbed().setDescription("This command has been entered incorrectly. Please use **removeWarn [@user][WarnID]**")]})
         }else {
             db.findOne({ GuildID: message.guild.id, UserID: Target.id, UserTag: Target.user.tag }, async (err, data) => {
                 if(err) throw err;
