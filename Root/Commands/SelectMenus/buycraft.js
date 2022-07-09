@@ -59,9 +59,8 @@ module.exports = {
                             .setThumbnail(Config.serverIcon)
                             .setDescription(`Thank you for creating a ticket, a member of the support team will be with you shortly.
                             
-                            **Category:**
-                            Buycraft Support
-                            __**---------------------**__
+                            **Category:** Buycraft Support
+
                              ${questions.firstQuestion}
                             → Answer: **${msg1}**
                              ${questions.secondQuestion}

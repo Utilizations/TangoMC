@@ -41,9 +41,8 @@ module.exports = {
                             .setThumbnail(Config.serverIcon)
                             .setDescription(`Thank you for creating a ticket, a member of the support team will be with you shortly.
                             
-                            **Category:**
-                            General Support
-                            __**---------------------**__
+                            **Category:** General Support
+
                              ${questions.firstQuestion}
                             → Answer: **${msg1}**
                              ${questions.secondQuestion}

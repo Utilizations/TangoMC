@@ -22,7 +22,7 @@ module.exports = {
             interaction.channel.send({embeds: [new Discord.MessageEmbed().setDescription("Please answer the questions so our team can help you quicker.").setColor(Config.serverColor)]})
             channel.send({embeds: [new Discord.MessageEmbed()
                 .setDescription(questions.firstQuestion)
-                .setColor(config.serverColor)]})
+                .setColor(Config.serverColor)]})
                 .then(msg => {
                 const filter = m => m.author.id === interaction.member.id
                channel.awaitMessages({filter, max: 1, time: 1000000
@@ -62,16 +62,15 @@ module.exports = {
                             .setThumbnail(Config.serverIcon)
                             .setDescription(`Thank you for creating a ticket, a member of the support team will be with you shortly.
                             
-                            **Category:**
-                            Bug/Player Report
-                            __**---------------------**__
-                             ${questions.firstQuestion}
+                            **Category:** Bug/Player Report
+
+                            ${questions.firstQuestion}
                             → Answer: **${msg1}**
-                             ${questions.secondQuestion}
+                            ${questions.secondQuestion}
                             → Answer: **${msg2}**
-                             ${questions.thirdQuestion}
+                            ${questions.thirdQuestion}
                             → Answer: **${msg3}**
-                             ${questions.forthQuestion}
+                            ${questions.forthQuestion}
                             → Answer: **${msg4}**`)
                             
                             const row1 = new Discord.MessageActionRow().addComponents(

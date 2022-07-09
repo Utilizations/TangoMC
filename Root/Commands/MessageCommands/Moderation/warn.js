@@ -28,6 +28,7 @@ module.exports = {
                             {
                                 ExecuterID: message.author.id,
                                 ExecuterTag: message.author.tag,
+                                Punishment: "Warn",
                                 Reason: Reason,
                                 Date: WarnDate
                             }
@@ -37,6 +38,7 @@ module.exports = {
                     const obj = {
                         ExecuterID: message.author.id,
                         ExecuterTag: message.author.tag,
+                        Punishment: "Warn",
                         Reason: Reason,
                         Date: WarnDate
                     }
