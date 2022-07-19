@@ -172,7 +172,7 @@ module.exports = {
                 .setLabel('Downvote')
                 .setStyle('DANGER'),
                 )
-            const msg = await interaction.reply({embeds: [suggestionembed], components: [row1]})
+            const msg = await interaction.channel.send({embeds: [suggestionembed], components: [row1]})
             data = new db({
                 UserID: interaction.member,
                 SuggestionId: msg.id,
