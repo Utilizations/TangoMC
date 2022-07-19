@@ -10,7 +10,7 @@ module.exports = {
         .setColor(config.serverColor)
             .setAuthor({name: `${config.serverName} Suggestions`, iconURL: config.serverIcon})
             .setDescription(`
-            Hello here at **MantleMC** we are always looking for suggestions to help improve your experience here. So if you have anything you would like to see on the server, or discord - please post a suggestion
+            Hello here at **${conig.serverName}** we are always looking for suggestions to help improve your experience here. So if you have anything you would like to see on the server, or discord - please post a suggestion
 
             **How do I make a suggestion?**
             Simple - just click the button bellow and fill out the boxes.
