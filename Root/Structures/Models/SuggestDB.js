@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 module.exports = model("SuggestDB", new Schema({
     UserID: String,
-    SuggestionID: Number,
+    SuggestionId: String,
     SuggestionTitle: String,
     Upvotes: Number,
     Downvotes: Number,

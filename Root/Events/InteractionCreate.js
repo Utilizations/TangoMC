@@ -175,7 +175,7 @@ module.exports = {
             const msg = interaction.reply({embeds: [suggestionembed], components: [row1]})
             data = new db({
                 UserID: interaction.member,
-                SuggestionID: msg.id,
+                SuggestionId: "fdawd",
                 SuggestionTitle: description,
                 Upvotes: 0,
                 Downvotes: 0,
