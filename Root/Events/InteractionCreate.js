@@ -179,7 +179,7 @@ module.exports = {
                 SuggestionTitle: description,
                 Upvotes: 0,
                 Downvotes: 0,
-                Status: 0,
+                Status: "Open",
                 Voters: [{ VoterID: interaction.member }]
             })
             data.save()
