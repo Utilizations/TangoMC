@@ -6,7 +6,7 @@ module.exports = {
     run : async(client, interaction, container) => {
         const modal = new Discord.Modal()
         .setCustomId('suggest')
-        .setTitle('(You will need to press cancel after pressing submit)')
+        .setTitle('Make a suggestion')
 
         const PROBLEM = new Discord.TextInputComponent()
         .setCustomId('problem')
