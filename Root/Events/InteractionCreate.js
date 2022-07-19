@@ -173,7 +173,6 @@ module.exports = {
                 .setStyle('DANGER'),
                 )
             const msg = await interaction.reply({embeds: [suggestionembed], components: [row1]})
-
             data = new db({
                 UserID: interaction.member,
                 SuggestionID: msg.id,
