@@ -6,11 +6,11 @@ module.exports = {
     run : async(client, interaction, container) => {
         const modal = new Discord.Modal()
         .setCustomId('suggest')
-        .setTitle('Make a suggestion')
+        .setTitle('(You will need to press cancel after pressing submit)')
 
         const PROBLEM = new Discord.TextInputComponent()
         .setCustomId('problem')
-        .setLabel('You suggestion. (You will need to press cancel after pressing submit)')
+        .setLabel('You suggestion.')
         .setStyle('PARAGRAPH')
 
         const forthActionRow = new Discord.MessageActionRow().addComponents(PROBLEM);
