@@ -9,7 +9,7 @@ module.exports = {
 
         const suggestdata = db.findOne({ SuggestionID: interaction.message.id }, async (err, data) => {
             if (err) throw err
-            data.updateOne({Status: '"Closed"'}, async (err) => {
+            data.updateOne({Status: 1}, async (err) => {
 
             })
 
