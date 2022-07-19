@@ -5,7 +5,6 @@ module.exports = {
     name: "bugplayer",
     run: async(client, interaction, container) => {
         const { guild, member} = interaction;
-        interaction.channel.bulkDelete(2)
 
 
         interaction.channel.setName(`report-${member.displayName}`)
@@ -30,21 +29,13 @@ module.exports = {
         const PROBLEM = new Discord.TextInputComponent()
         .setCustomId('problem')
         .setLabel('Please explain the situation')
-        .setStyle('LONG')
+        .setStyle('PARAGRAPH')
 
-        const firstActionRow = new MessageActionRow().addComponents(IGN);
-		const secondActionRow = new MessageActionRow().addComponents(REALM);
-        const thirdActionRow = new MessageActionRow().addComponents(REPORTER);
-        const forthActionRow = new MessageActionRow().addComponents(PROBLEM);
+        const firstActionRow = new Discord.MessageActionRow().addComponents(IGN);
+		const secondActionRow = new Discord.MessageActionRow().addComponents(REALM);
+        const thirdActionRow = new Discord.MessageActionRow().addComponents(REPORTER);
+        const forthActionRow = new Discord.MessageActionRow().addComponents(PROBLEM);
 		modal.addComponents(firstActionRow, secondActionRow, thirdActionRow, forthActionRow);
 		await interaction.showModal(modal);
-
-        if(!interaction.isModalSubmit()) return
-        const reporter = interaction.fields.getTextInputValue('ign')
-        const server = interaction.fields.getTextInputValue('realm')
-        const player = interaction.fields.getTextInputValue('reporter')
-        const description = interaction.fields.getTextInputValue('problem')
-
-        interaction.channel.send(`${reporter} // ${server} // ${player} // ${description}`)
     }
 }
