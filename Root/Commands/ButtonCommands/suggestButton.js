@@ -10,7 +10,7 @@ module.exports = {
 
         const PROBLEM = new Discord.TextInputComponent()
         .setCustomId('problem')
-        .setLabel('You suggestion.')
+        .setLabel('You suggestion. (You will need to press cancel after pressing submit)')
         .setStyle('PARAGRAPH')
 
         const forthActionRow = new Discord.MessageActionRow().addComponents(PROBLEM);
