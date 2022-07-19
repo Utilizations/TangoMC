@@ -6,7 +6,7 @@ module.exports = model("SuggestDB", new Schema({
     SuggestionTitle: String,
     Upvotes: Number,
     Downvotes: Number,
-    Status: Number,
+    Status: String,
     Voters: Array,
 
 }))
