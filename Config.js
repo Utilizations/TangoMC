@@ -7,10 +7,10 @@ module.exports = {
     spacer1: "---------------------------------------------------------------------------------------------",
 
     serverName: "AzaleaMC",
-    serverIcon: "https://i.imgur.com/KNg5vES.png",
-    serverBanner: "https://i.imgur.com/9XDqNrF.png",
+    serverIcon: "https://i.imgur.com/DU09Tcc.jpg",
+    serverBanner: "https://i.imgur.com/9RuavIG.png",
     serverIp: "AzaleaMC",
-    serverColor: "#7700ff",
+    serverColor: "#fca103",
 
     staffChanges: "995782561596985374",
     islandsPlaying: "",
