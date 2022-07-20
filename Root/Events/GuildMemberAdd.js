@@ -4,8 +4,8 @@ const db = require("../Structures/Models/InvitesDB")
 
 module.exports = {
     name: "guildMemberAdd",
-    run: async(guildMember) => {
-        let invites = await guildMember.guild.fetchInvites();
+    run: async(member) => {
+        let invites = await member.guild.fetchInvites();
         let userInv = invites.filter(u => u.inviter && u.inviter.id === invites.inviter.id)
 
         db.findOne({ GuildID: message.guild.id, UserID: userInv}, async (err, data) => {
@@ -26,9 +26,9 @@ module.exports = {
         .setThumbnail(config.serverIcon)
         .setColor(config.setColor)
         .setDescription(`
-        Welcome ${guildMember} to **${config.serverName}**
+        Welcome ${member} to **${config.serverName}**
         `)
-        const logChannel = guildMember.guild.channels.cache.get(config.welcomeChannel)
+        const logChannel = member.guild.channels.cache.get(config.welcomeChannel)
         logChannel.send({embeds: [welcomeembed]})
     }
 }
