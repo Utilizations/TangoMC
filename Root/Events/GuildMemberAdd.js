@@ -9,7 +9,7 @@ module.exports = {
         .setThumbnail(config.serverIcon)
         .setColor(config.setColor)
         .setDescription(`
-        Welcome ${guildMember} to **MantleMC**
+        Welcome ${guildMember} to **${config.serverName}**
         `)
         log1 = guildMember.guild.channels.cache.get(config.welcomeChannel)
         log1.send({embeds: [welcomeembed]})
