@@ -7,9 +7,9 @@ module.exports = {
     run: async(guildMember) => {
 
         // To compare, we need to load the current invite list.
-        const newInvites = await member.guild.invites.fetch()
+        const newInvites = await guildMember.guild.invites.fetch()
         // This is the *existing* invites for the guild.
-        const oldInvites = invites.get(member.guild.id);
+        const oldInvites = invites.get(guildMember.guild.id);
         // Look through the invites, find the one for which the uses went up.
         const invite = newInvites.find(i => i.uses > oldInvites.get(i.code));
         // This is just to simplify the message being sent below (inviter doesn't have a tag property)
