@@ -10,6 +10,14 @@ module.exports = {
         client.user.setActivity('MantleMC.net.', {
             type: `WATCHING`,
         })
+
+        client.guilds.cache.forEach(async (guild) => {
+            // Fetch all Guild Invites
+            const firstInvites = await guild.invites.fetch();
+            // Set the key as Guild ID, and create a map which has the invite code, and the number of uses
+            invites.set(guild.id, new Collection(firstInvites.map((invite) => [invite.code, invite.uses])));
+          });
+          
         const ClientBox = new Box({
             w: Math.floor(client.user.tag.length + 27 ),
             h: 7,
