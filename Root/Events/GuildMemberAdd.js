@@ -5,7 +5,7 @@ const db = require("../Structures/Models/InvitesDB")
 module.exports = {
     name: "guildMemberAdd",
     run: async(member) => {
-        let invites = await member.guild.fetchInvites();
+        let invites = await member.guild.invites.fetch();
         let userInv = invites.filter(u => u.inviter && u.inviter.id === invites.inviter.id)
 
         db.findOne({ GuildID: message.guild.id, UserID: userInv}, async (err, data) => {
