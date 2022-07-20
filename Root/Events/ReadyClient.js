@@ -11,6 +11,14 @@ module.exports = {
         client.user.setActivity('AzaleaMC.', {
             type: `WATCHING`,
         })
+        client.on('inviteCreate', async invite => {
+            const invites = await invite.guild.invites.fetch();
+        
+            const codeUses = new Map();
+            invites.each(inv => codeUses.set(inv.code, inv.uses));
+        
+            guildInvites.set(invite.guild.id, codeUses);
+        })
         client.guilds.cache.forEach(guild => {
             guild.invites.fetch()
                 .then(invites => {
@@ -85,15 +93,6 @@ Client Events              ::    Initiating ${client.events.size} events.
             console.log("The Client is now connected to the database!")
         }).catch((err) => {
             console.log(err)
-        })
-
-        client.on('inviteCreate', async invite => {
-            const invites = await invite.guild.invites.fetch();
-        
-            const codeUses = new Map();
-            invites.each(inv => codeUses.set(inv.code, inv.uses));
-        
-            guildInvites.set(invite.guild.id, codeUses);
         })
         
         client.on('guildMemberAdd', async member => {
