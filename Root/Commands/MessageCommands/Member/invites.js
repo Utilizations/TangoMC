@@ -7,7 +7,6 @@ module.exports = {
     run: async(client, message, args, container) => {
         message.delete()
         Target = message.mentions.members.size === 1 ? message.mentions.members.first() : message.guild.members.cache.get(args[0])
-        message.channel.send("Worked")
 
         if(!Target) {
             db.findOne({ GuildID: message.guild.id, UserID: message.author.tag }, async (err, data) => {
