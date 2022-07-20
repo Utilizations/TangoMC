@@ -10,7 +10,7 @@ module.exports = {
         client.user.setActivity('MantleMC.net.', {
             type: `WATCHING`,
         })
-
+        const invites = new Collection();
         client.guilds.cache.forEach(async (guild) => {
             // Fetch all Guild Invites
             const firstInvites = await guild.invites.fetch();
