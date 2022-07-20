@@ -4,15 +4,6 @@ const mongoose = require("mongoose");
 const { database } = require("../../Config");
 const { Collection } = require("discord.js")
 
-client.on('inviteCreate', async invite => {
-    const invites = await invite.guild.invites.fetch();
-
-    const codeUses = new Map();
-    invites.each(inv => codeUses.set(inv.code, inv.uses));
-
-    guildInvites.set(invite.guild.id, codeUses);
-})
-
 module.exports = {
     name: "ready",
     once: true,
@@ -98,6 +89,15 @@ Client Events              ::    Initiating ${client.events.size} events.
 
     }
 }
+
+client.on('inviteCreate', async invite => {
+    const invites = await invite.guild.invites.fetch();
+
+    const codeUses = new Map();
+    invites.each(inv => codeUses.set(inv.code, inv.uses));
+
+    guildInvites.set(invite.guild.id, codeUses);
+})
 
 client.on('guildMemberAdd', async member => {
     const cachedInvites = guildInvites.get(member.guild.id)
