@@ -1,6 +1,7 @@
 const discord = require("discord.js")
 const config = require("../../Config")
 const db = require("../Structures/Models/InvitesDB")
+const invites = new discord.Collection();
 
 module.exports = {
     name: "guildMemberAdd",
