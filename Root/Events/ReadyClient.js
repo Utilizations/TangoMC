@@ -2,6 +2,7 @@ const chalk = require("chalk");
 const Box = require("cli-box");
 const mongoose = require("mongoose");
 const { database } = require("../../Config");
+const { Collection } = require("discord.js")
 
 module.exports = {
     name: "ready",
