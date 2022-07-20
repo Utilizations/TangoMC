@@ -12,7 +12,7 @@ const tracker = InvitesTracker.init(client, {
 
 tracker.on('guildMemberAdd', (member, type, invite) => {
 
-    const welcomeChannel = member.guild.channels.cache.find((ch) => ch.name === 'welcome');
+    const welcomeChannel = guildMember.guild.channels.cache.get(config.welcomeChannel)
 
     if(type === 'normal'){
         welcomeChannel.send(`Welcome ${member}! You were invited by ${invite.inviter.username}!`);
