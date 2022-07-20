@@ -1,7 +1,82 @@
-const discord = require("discord.js")
+const Discord = require('discord.js');
+const client = new Discord.Client({
+    intents: [Discord.Intents.FLAGS.GUILDS]
+});
+
+const InvitesTracker = require('@androz2091/discord-invites-tracker');
+const tracker = InvitesTracker.init(client, {
+    fetchGuilds: true,
+    fetchVanity: true,
+    fetchAuditLogs: true
+});
+
+tracker.on('guildMemberAdd', (member, type, invite) => {
+
+    const welcomeChannel = member.guild.channels.cache.find((ch) => ch.name === 'welcome');
+
+    if(type === 'normal'){
+        welcomeChannel.send(`Welcome ${member}! You were invited by ${invite.inviter.username}!`);
+    }
+
+    else if(type === 'vanity'){
+        welcomeChannel.send(`Welcome ${member}! You joined using a custom invite!`);
+    }
+
+    else if(type === 'permissions'){
+        welcomeChannel.send(`Welcome ${member}! I can't figure out how you joined because I don't have the "Manage Server" permission!`);
+    }
+
+    else if(type === 'unknown'){
+        welcomeChannel.send(`Welcome ${member}! I can't figure out how you joined the server...`);
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const discord = require("discord.js")
 const config = require("../../Config")
 const db = require("../Structures/Models/InvitesDB")
-const invites = new discord.Collection();
 
 module.exports = {
     name: "guildMemberAdd",
@@ -47,12 +122,12 @@ module.exports = {
         });
 
             
-        /*const welcomeembed = new discord.MessageEmbed()
+        const welcomeembed = new discord.MessageEmbed()
         .setAuthor({name: `${config.serverName} Welcome!`, iconURL: config.serverIcon})
         .setThumbnail(config.serverIcon)
         .setColor(config.setColor)
         .setDescription(`
         Welcome ${guildMember} to **${config.serverName}**
-        `)*/
+        `)
     }
-}
+}*/
