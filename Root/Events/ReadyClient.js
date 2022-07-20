@@ -8,7 +8,7 @@ module.exports = {
     name: "ready",
     once: true,
     run: async(client) => {
-        client.user.setActivity('MantleMC.net.', {
+        client.user.setActivity('AzaleaMC.', {
             type: `WATCHING`,
         })
         const invites = new Collection();
