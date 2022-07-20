@@ -11,28 +11,6 @@ module.exports = {
         client.user.setActivity('AzaleaMC.', {
             type: `WATCHING`,
         })
-        client.on('inviteCreate', async invite => {
-            const invites = await invite.guild.invites.fetch();
-        
-            const codeUses = new Map();
-            invites.each(inv => codeUses.set(inv.code, inv.uses));
-        
-            guildInvites.set(invite.guild.id, codeUses);
-        })
-        client.guilds.cache.forEach(guild => {
-            guild.invites.fetch()
-                .then(invites => {
-                    console.log("INVITES CACHED");
-                    const codeUses = new Map();
-                    invites.each(inv => codeUses.set(inv.code, inv.uses));
-    
-                    guildInvites.set(guild.id, codeUses);
-                })
-                .catch(err => {
-                    console.log("OnReady Error:", err)
-                })
-        })
-          
         const ClientBox = new Box({
             w: Math.floor(client.user.tag.length + 27 ),
             h: 7,
@@ -94,23 +72,6 @@ Client Events              ::    Initiating ${client.events.size} events.
         }).catch((err) => {
             console.log(err)
         })
-        
-        client.on('guildMemberAdd', async member => {
-            const cachedInvites = guildInvites.get(member.guild.id)
-            const newInvites = await member.guild.invites.fetch();
-            try {
-                const usedInvite = newInvites.find(inv => cachedInvites.get(inv.code) < inv.uses);
-                console.log("Cached", [...cachedInvites.keys()])
-                console.log("New", [...newInvites.values()].map(inv => inv.code))
-                console.log("Used", usedInvite)
-                console.log(`The code ${usedInvite.code} was just used by ${member.user.username}.`)
-            } catch (err) {
-                console.log("OnGuildMemberAdd Error:", err)
-            }
-        
-            newInvites.each(inv => cachedInvites.set(inv.code, inv.uses));
-            guildInvites.set(member.guild.id, cachedInvites);
-        });
 
     }
 
