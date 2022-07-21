@@ -1,4 +1,4 @@
-const config = require("../../../Config");
+const config = require("../../../../Config");
 const Discord = require("discord.js")
 const { createTranscript } = require("discord-html-transcripts");
 
