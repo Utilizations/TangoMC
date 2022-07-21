@@ -197,7 +197,7 @@ module.exports = {
                 parent: category,
                 permissionOverwrites: [
                     {
-                        id: member.id,
+                        id: interaction.member.id,
                         allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
                     },
                     {
@@ -213,7 +213,7 @@ module.exports = {
         
                 const Embed = new Discord.MessageEmbed()
                 .setColor(config.serverColor)
-                .setAuthor({name: `${config.serverName} Application`, iconURL: config.serverIcon})
+                .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
                 .addField("IGN.", answer1)
                 .addField("Age.", answer2)
                 .addField("Why do you want to be staff?.", answer3.substring(0, 1024))
@@ -228,7 +228,7 @@ module.exports = {
                     embeds: [Embed],
                 });
                 await channel
-                .send({content: `> ${member} here is your application.`})
+                .send({content: `> ${interaction.member} here is your application.`})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -238,7 +238,7 @@ module.exports = {
                 msgstaff.react("❌")
     
                 await interaction.channel
-                .send({content: `> ${member} your application has been created: ${channel}`})
+                .send({content: `> ${interaction.member} your application has been created: ${channel}`})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
