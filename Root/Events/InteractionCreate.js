@@ -226,13 +226,13 @@ module.exports = {
                 });
                 await channel
                 .send({content: `> ${interaction.member} here is your application.`})
+                msgstaff.react("✅")
+                msgstaff.react("❌")
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
                     }, 1 * 5000);
                 })
-                msgstaff.react("✅")
-                msgstaff.react("❌")
     
                 await interaction.channel
                 .send({content: `> ${interaction.member} your application has been created: ${channel}`})
