@@ -37,7 +37,7 @@ module.exports = {
 					.setStyle('DANGER'),
                 )
                 const sendchannel = client.channels.cache.get('995749984106463362')
-                sendchannel.bulkDelete(1)
+                sendchannel.bulkDelete(5)
                         await sendchannel.send.send({
                             embeds: [vPanel],
                             components: [row2],
