@@ -216,9 +216,9 @@ module.exports = {
                 .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
                 .addField("IGN.", answer1)
                 .addField("Age.", answer2)
-                .addField("Why do you want to be staff?.", answer3)
-                .addField("Experiences.", answer4)
-                .addField("Anything else?.", answer5)
+                .addField("Why do you want to be staff?.", answer3.substring(0, 1024))
+                .addField("Experiences.", answer4.substring(0, 1024))
+                .addField("Anything else?.", answer5.substring(0, 1024))
                 .setThumbnail(config.serverIcon)
 
                 const msgstaff = channel.send({
