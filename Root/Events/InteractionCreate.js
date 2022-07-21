@@ -217,11 +217,8 @@ module.exports = {
                 .addField("IGN.", answer1)
                 .addField("Age.", answer2)
                 .addField("Why do you want to be staff?.", answer3.substring(0, 1024))
-                .addField("Why do you want to be staff? #2", answer3.substring(0, 2049))
                 .addField("Experiences.", answer4.substring(0, 1024))
-                .addField("Experiences #2", answer4.substring(0, 2049))
                 .addField("Anything else?.", answer5.substring(0, 1024))
-                .addField("Anything else? #2", answer5.substring(1025, 2049))
                 .setThumbnail(config.serverIcon)
 
                 const msgstaff = channel.send({
