@@ -189,7 +189,7 @@ module.exports = {
             const answer2 = interaction.fields.getTextInputValue('age1')
             const answer3 = interaction.fields.getTextInputValue('why1')
             const answer4 = interaction.fields.getTextInputValue('experinces1')
-            const answer5 = interaction.fields.getTextInputValue('else1 ')
+            const answer5 = interaction.fields.getTextInputValue('else1')
 
             const category = "999672483529637898"
             await guild.channels.create(`Staff Application`, {
