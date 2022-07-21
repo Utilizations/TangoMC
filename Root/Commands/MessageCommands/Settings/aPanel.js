@@ -36,7 +36,9 @@ module.exports = {
 					.setLabel('Developer Application')
 					.setStyle('DANGER'),
                 )
-                        await client.channels.cache.get('995749984106463362').send({
+                const sendchannel = client.channels.cache.get('995749984106463362')
+                sendchannel.bulkDelete(1)
+                        await sendchannel.send.send({
                             embeds: [vPanel],
                             components: [row2],
                             allowedMentions: {
