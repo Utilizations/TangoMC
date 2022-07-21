@@ -36,8 +36,7 @@ module.exports = {
 					.setLabel('Developer Application')
 					.setStyle('DANGER'),
                 )
-                        await message.channel
-                        .send({
+                        await client.channels.cache.get('995749984106463362').send({
                             embeds: [vPanel],
                             components: [row2],
                             allowedMentions: {
