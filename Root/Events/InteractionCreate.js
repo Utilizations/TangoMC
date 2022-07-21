@@ -192,7 +192,7 @@ module.exports = {
             const answer5 = interaction.fields.getTextInputValue('else1')
 
             const category = "999672483529637898"
-            await guild.channels.create(`Staff Application`, {
+            await interaction.guild.channels.create(`Staff Application`, {
                 type: "GUILD_TEXT",
                 parent: category,
                 permissionOverwrites: [
@@ -205,7 +205,7 @@ module.exports = {
                         allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
                     },
                     {
-                        id: guild.roles.everyone,
+                        id: interaction.guild.roles.everyone,
                         deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
                     },
                 ],
