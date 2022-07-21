@@ -233,7 +233,7 @@ module.exports = {
                     }, 1 * 5000);
                 })
     
-                await interaction.reply({content: `> ${interaction.member} your application has been created: ${channel}`})
+                await interaction.reply({embeds: [new Discord.MessageEmbed().setDescription(`${interaction.member} your application has bee created in ${channel}`)], ephemeral: true})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -288,7 +288,7 @@ module.exports = {
                     }, 1 * 5000);
                 })
     
-                await interaction.reply({content: `> ${interaction.member} your application has been created: ${channel}`})
+                await interaction.reply({embeds: [new Discord.MessageEmbed().setDescription(`${interaction.member} your application has bee created in ${channel}`)], ephemeral: true})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -345,7 +345,7 @@ module.exports = {
                     }, 1 * 5000);
                 })
     
-                await interaction.reply({content: `> ${interaction.member} your application has been created: ${channel}`})
+                await interaction.reply({embeds: [new Discord.MessageEmbed().setDescription(`${interaction.member} your application has bee created in ${channel}`)], ephemeral: true})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
