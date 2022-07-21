@@ -19,7 +19,7 @@ module.exports = {
         .setStyle('SHORT')
         const WHY = new Discord.TextInputComponent()
         .setCustomId('why3')
-        .setLabel('WHy should we accept you?')
+        .setLabel('Why should we accept you?')
         .setStyle('PARAGRAPH')
         const EXPERIENCE = new Discord.TextInputComponent()
         .setCustomId('experience3')

@@ -16,9 +16,9 @@ module.exports = {
             → Media
             → Development
 
-            If you think you have what It takes to take on one of these roles - please click the corrisponding button to the team you would like to join to fill in the application.
+            If you think you have what It takes to take on one of these roles - please click the corresponding button to the team you would like to join to fill in the application.
 
-
+        ***(( Do not exceed 1024 characters for eahc question. If your answer is long than 1024, please put NA and post the answer in the channel upon completion. ))
             `)
             .setThumbnail(config.serverIcon)
 

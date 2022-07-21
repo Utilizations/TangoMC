@@ -210,6 +210,7 @@ module.exports = {
                     },
                 ],
             }).then(async(channel) => {
+                
         
                 const Embed = new Discord.MessageEmbed()
                 .setColor(config.serverColor)
@@ -244,10 +245,122 @@ module.exports = {
             })
         }
         if (interaction.customId === 'media') {
-            
+            const answer1 = interaction.fields.getTextInputValue('ign2')
+            const answer2 = interaction.fields.getTextInputValue('age2')
+            const answer3 = interaction.fields.getTextInputValue('channel')
+            const answer5 = interaction.fields.getTextInputValue('else2')
+
+            const category = "999672483529637898"
+            await interaction.guild.channels.create(`Media Application`, {
+                type: "GUILD_TEXT",
+                parent: category,
+                permissionOverwrites: [
+                    {
+                        id: interaction.member.id,
+                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                    {
+                        id: config.staffRole,
+                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                    {
+                        id: interaction.guild.roles.everyone,
+                        deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                ],
+            }).then(async(channel) => {
+                
+        
+                const Embed = new Discord.MessageEmbed()
+                .setColor(config.serverColor)
+                .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
+                .addField("IGN.", answer1)
+                .addField("Age.", answer2)
+                .addField("Please link your channel.", answer3.substring(0, 1024))
+                .addField("Anything else?.", answer5.substring(0, 1024))
+                .setThumbnail(config.serverIcon)
+
+                const msgstaff = channel.send({
+                    embeds: [Embed],
+                });
+                await channel
+                .send({content: `> ${interaction.member} here is your application.`})
+                msgstaff.react("✅")
+                msgstaff.react("❌")
+                .then ((m) => {
+                    setTimeout(() => {
+                        m.delete().catch(() => {});
+                    }, 1 * 5000);
+                })
+    
+                await interaction.channel
+                .send({content: `> ${interaction.member} your application has been created: ${channel}`})
+                .then ((m) => {
+                    setTimeout(() => {
+                        m.delete().catch(() => {});
+                    }, 1 * 5000);
+                });
+            })
         }
         if (interaction.customId === 'developer') {
-            
+            const answer1 = interaction.fields.getTextInputValue('ign3')
+            const answer2 = interaction.fields.getTextInputValue('age3')
+            const answer3 = interaction.fields.getTextInputValue('why3')
+            const answer4 = interaction.fields.getTextInputValue('experince3')
+            const answer5 = interaction.fields.getTextInputValue('else3')
+
+            const category = "999672483529637898"
+            await interaction.guild.channels.create(`Developer Application`, {
+                type: "GUILD_TEXT",
+                parent: category,
+                permissionOverwrites: [
+                    {
+                        id: interaction.member.id,
+                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                    {
+                        id: config.staffRole,
+                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                    {
+                        id: interaction.guild.roles.everyone,
+                        deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                ],
+            }).then(async(channel) => {
+                
+        
+                const Embed = new Discord.MessageEmbed()
+                .setColor(config.serverColor)
+                .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
+                .addField("IGN.", answer1)
+                .addField("Age.", answer2)
+                .addField("Why should we accept you?", answer3.substring(0, 1024))
+                .addField("hat is your previous work?", answer4.substring(0, 1024))
+                .addField("Anything else?.", answer5.substring(0, 1024))
+                .setThumbnail(config.serverIcon)
+
+                const msgstaff = channel.send({
+                    embeds: [Embed],
+                });
+                await channel
+                .send({content: `> ${interaction.member} here is your application.`})
+                msgstaff.react("✅")
+                msgstaff.react("❌")
+                .then ((m) => {
+                    setTimeout(() => {
+                        m.delete().catch(() => {});
+                    }, 1 * 5000);
+                })
+    
+                await interaction.channel
+                .send({content: `> ${interaction.member} your application has been created: ${channel}`})
+                .then ((m) => {
+                    setTimeout(() => {
+                        m.delete().catch(() => {});
+                    }, 1 * 5000);
+                });
+            })
         }
     }
 }
