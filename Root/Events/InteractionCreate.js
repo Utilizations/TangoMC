@@ -233,8 +233,7 @@ module.exports = {
                     }, 1 * 5000);
                 })
     
-                await interaction.channel
-                .send({content: `> ${interaction.member} your application has been created: ${channel}`})
+                await interaction.reply({content: `> ${interaction.member} your application has been created: ${channel}`})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -289,8 +288,7 @@ module.exports = {
                     }, 1 * 5000);
                 })
     
-                await interaction.channel
-                .send({content: `> ${interaction.member} your application has been created: ${channel}`})
+                await interaction.reply({content: `> ${interaction.member} your application has been created: ${channel}`})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -347,8 +345,7 @@ module.exports = {
                     }, 1 * 5000);
                 })
     
-                await interaction.channel
-                .send({content: `> ${interaction.member} your application has been created: ${channel}`})
+                await interaction.reply({content: `> ${interaction.member} your application has been created: ${channel}`})
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
