@@ -227,8 +227,6 @@ module.exports = {
                 });
                 await channel
                 .send({content: `> ${interaction.member} here is your application.`})
-                msgstaff.react("✅")
-                msgstaff.react("❌")
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -285,8 +283,6 @@ module.exports = {
                 });
                 await channel
                 .send({content: `> ${interaction.member} here is your application.`})
-                msgstaff.react("✅")
-                msgstaff.react("❌")
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});
@@ -336,7 +332,7 @@ module.exports = {
                 .addField("IGN.", answer1)
                 .addField("Age.", answer2)
                 .addField("Why should we accept you?", answer3.substring(0, 1024))
-                .addField("hat is your previous work?", answer4.substring(0, 1024))
+                .addField("What is your previous work?", answer4.substring(0, 1024))
                 .addField("Anything else?.", answer5.substring(0, 1024))
                 .setThumbnail(config.serverIcon)
 
@@ -345,8 +341,6 @@ module.exports = {
                 });
                 await channel
                 .send({content: `> ${interaction.member} here is your application.`})
-                msgstaff.react("✅")
-                msgstaff.react("❌")
                 .then ((m) => {
                     setTimeout(() => {
                         m.delete().catch(() => {});

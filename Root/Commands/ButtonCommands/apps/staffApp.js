@@ -27,7 +27,7 @@ module.exports = {
         .setStyle('PARAGRAPH')
         const ELSE = new Discord.TextInputComponent()
         .setCustomId('else1')
-        .setLabel('Anything else?')
+        .setLabel('What screenshare experience do you have and what methods do you use?')
         .setStyle('PARAGRAPH')
 
         const firstActionRow = new Discord.MessageActionRow().addComponents(IGN);
