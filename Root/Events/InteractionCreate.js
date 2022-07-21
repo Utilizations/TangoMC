@@ -184,5 +184,73 @@ module.exports = {
             })
             data.save()
         }
+        if (interaction.customId === 'staff') {
+            const answer1 = interaction.fields.getTextInputValue('ign1')
+            const answer2 = interaction.fields.getTextInputValue('age1')
+            const answer3 = interaction.fields.getTextInputValue('why1')
+            const answer4 = interaction.fields.getTextInputValue('experiences1')
+            const answer5 = interaction.fields.getTextInputValue('else1 ')
+
+            const category = "999672483529637898"
+            await guild.channels.create(`Staff Application`, {
+                type: "GUILD_TEXT",
+                parent: category,
+                permissionOverwrites: [
+                    {
+                        id: member.id,
+                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                    {
+                        id: config.staffRole,
+                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                    {
+                        id: guild.roles.everyone,
+                        deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
+                    },
+                ],
+            }).then(async(channel) => {
+        
+                const Embed = new Discord.MessageEmbed()
+                .setColor(config.serverColor)
+                .setAuthor({name: `${config.serverName} Application`, iconURL: config.serverIcon})
+                .addField("IGN.", answer1)
+                .addField("Age.", answer2)
+                .addField("Why do you want to be staff?.", answer3.substring(0, 1024))
+                .addField("Why do you want to be staff? #2", answer3.substring(0, 2049))
+                .addField("Experiences.", answer4.substring(0, 1024))
+                .addField("Experiences #2", answer4.substring(0, 2049))
+                .addField("Anything else?.", answer5.substring(0, 1024))
+                .addField("Anything else? #2", answer5.substring(1025, 2049))
+                .setThumbnail(config.serverIcon)
+
+                const msgstaff = channel.send({
+                    embeds: [Embed],
+                });
+                await channel
+                .send({content: `> ${member} here is your application.`})
+                .then ((m) => {
+                    setTimeout(() => {
+                        m.delete().catch(() => {});
+                    }, 1 * 5000);
+                })
+                msgstaff.react("✅")
+                msgstaff.react("❌")
+    
+                await interaction.channel
+                .send({content: `> ${member} your application has been created: ${channel}`})
+                .then ((m) => {
+                    setTimeout(() => {
+                        m.delete().catch(() => {});
+                    }, 1 * 5000);
+                });
+            })
+        }
+        if (interaction.customId === 'media') {
+            
+        }
+        if (interaction.customId === 'developer') {
+            
+        }
     }
 }
