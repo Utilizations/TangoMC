@@ -17,7 +17,6 @@ module.exports = {
                 new Discord.MessageButton()
                     .setCustomId('verify')
 					.setLabel('Click Here to verify')
-                    .setEmoji(' ')
 					.setStyle('SECONDARY'),
                 )
                         await message.channel
