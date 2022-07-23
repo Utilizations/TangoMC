@@ -1,19 +1,19 @@
 module.exports = {
     prefix: [";"],
     developers: ["722432254399479829"],
-    token: "OTk0MzYyMDg0OTQ5MjM3ODQw.GAEOJd.JZu38BIJRganmF0-t_GEbhmM0Yu9OiHWs8Yd3Q",
+    token: "MTAwMDQyMzg3NjM1MTc2NjYzOA.G3CnXs.vZbcJ5PZ1n-oFYaMdqo5D90JxveCHjFXZYyCdQ",
     database: "mongodb+srv://bot:bot@bot.jeyqkra.mongodb.net/?retryWrites=true&w=majority",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
-    serverName: "MantleMC",
-    serverIcon: "https://i.imgur.com/KNg5vES.png",
-    serverBanner: "https://i.imgur.com/9XDqNrF.png",
+    serverName: "AhertMC",
+    serverIcon: "https://i.imgur.com/0qb7Bqi.png",
+    serverBanner: "https://i.imgur.com/mMSrY7X.png",
     serverIp: "Mantle.mc.net",
-    serverColor: "#7700ff",
+    serverColor: "#24fc03",
 
-    staffChanges: "991875969889599508",
-    islandsPlaying: "994377958687002674",
+    staffChanges: "1000419318279970846",
+    islandsPlaying: "1000425335487217704",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
@@ -30,8 +30,8 @@ module.exports = {
     **!! Any tickets opened for any reasons apart from these will be closed !!**
     
     *Note: Average response time is 4 hours*`,
-    tCategory: "990728017699557476",
-    tTranscripts: "991875969889599508",
+    tCategory: "1000419053514535005",
+    tTranscripts: "1000425423148175440",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
@@ -48,9 +48,9 @@ module.exports = {
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
-    serverAnnounce: "994442577946366042",
-    serverChangeLogs: "988990882491539587",
-    welcomeChannel: "994011630461522010",
+    serverAnnounce: "1000419115829317763",
+    serverChangeLogs: "1000419200050929684",
+    welcomeChannel: "1000419177305211022",
 
     spacer1: "---------------------------------------------------------------------------------------------",
     spacer1: "---------------------------------------------------------------------------------------------",
