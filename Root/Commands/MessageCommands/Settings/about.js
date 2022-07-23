@@ -12,7 +12,7 @@ module.exports = {
             .setDescription(`
             AhertMC is a 1.8-1.18 Skyblock server, with hopes to expand into further gamemodes.
 
-            AhertMC was stared by an experienced server Manager/Developer who had taken upon himself to try his own project.
+            AhertMC was started by an experienced server Manager/Developer who had taken upon himself to try his own project.
             He aims to bring something new into the Minecraft Community by providing a unique and enjoyable network, for new and experienced players to join along and play.
 
             AhertMC was established in the middle of 2022.
