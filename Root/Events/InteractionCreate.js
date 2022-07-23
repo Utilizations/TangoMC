@@ -172,10 +172,11 @@ module.exports = {
                 .setLabel('Downvote')
                 .setStyle('DANGER'),
                 )
-            const msg = await interaction.channel.send({embeds: [suggestionembed], components: [row1]})
+            const msg = await interaction.reply({embeds: [suggestionembed], components: [row1]})
+
             data = new db({
                 UserID: interaction.member,
-                SuggestionId: msg.id,
+                SuggestionID: msg.id,
                 SuggestionTitle: description,
                 Upvotes: 0,
                 Downvotes: 0,
@@ -183,175 +184,6 @@ module.exports = {
                 Voters: [{ VoterID: interaction.member }]
             })
             data.save()
-        }
-        if (interaction.customId === 'staff') {
-            const answer1 = interaction.fields.getTextInputValue('ign1')
-            const answer2 = interaction.fields.getTextInputValue('age1')
-            const answer3 = interaction.fields.getTextInputValue('why1')
-            const answer4 = interaction.fields.getTextInputValue('experinces1')
-            const answer5 = interaction.fields.getTextInputValue('else1')
-
-            const category = "999672483529637898"
-            await interaction.guild.channels.create(`Staff Application`, {
-                type: "GUILD_TEXT",
-                parent: category,
-                permissionOverwrites: [
-                    {
-                        id: interaction.member.id,
-                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                    {
-                        id: config.staffRole,
-                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                    {
-                        id: interaction.guild.roles.everyone,
-                        deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                ],
-            }).then(async(channel) => {
-                
-        
-                const Embed = new Discord.MessageEmbed()
-                .setColor(config.serverColor)
-                .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
-                .addField("IGN.", answer1)
-                .addField("Age.", answer2)
-                .addField("Why do you want to be staff?.", answer3.substring(0, 1024))
-                .addField("Experiences.", answer4.substring(0, 1024))
-                .addField("Anything else?.", answer5.substring(0, 1024))
-                .setThumbnail(config.serverIcon)
-
-                const msgstaff = channel.send({
-                    embeds: [Embed],
-                });
-                await channel
-                .send({content: `> ${interaction.member} here is your application.`})
-                .then ((m) => {
-                    setTimeout(() => {
-                        m.delete().catch(() => {});
-                    }, 1 * 5000);
-                })
-    
-                await interaction.reply({embeds: [new Discord.MessageEmbed().setDescription(`${interaction.member} your application has bee created in ${channel}`)], ephemeral: true})
-                .then ((m) => {
-                    setTimeout(() => {
-                        m.delete().catch(() => {});
-                    }, 1 * 5000);
-                });
-            })
-        }
-        if (interaction.customId === 'media') {
-            const answer1 = interaction.fields.getTextInputValue('ign2')
-            const answer2 = interaction.fields.getTextInputValue('age2')
-            const answer3 = interaction.fields.getTextInputValue('channel')
-            const answer5 = interaction.fields.getTextInputValue('else2')
-
-            const category = "999672483529637898"
-            await interaction.guild.channels.create(`Media Application`, {
-                type: "GUILD_TEXT",
-                parent: category,
-                permissionOverwrites: [
-                    {
-                        id: interaction.member.id,
-                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                    {
-                        id: config.staffRole,
-                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                    {
-                        id: interaction.guild.roles.everyone,
-                        deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                ],
-            }).then(async(channel) => {
-                
-        
-                const Embed = new Discord.MessageEmbed()
-                .setColor(config.serverColor)
-                .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
-                .addField("IGN.", answer1)
-                .addField("Age.", answer2)
-                .addField("Please link your channel.", answer3.substring(0, 1024))
-                .addField("Anything else?.", answer5.substring(0, 1024))
-                .setThumbnail(config.serverIcon)
-
-                const msgstaff = channel.send({
-                    embeds: [Embed],
-                });
-                await channel
-                .send({content: `> ${interaction.member} here is your application.`})
-                .then ((m) => {
-                    setTimeout(() => {
-                        m.delete().catch(() => {});
-                    }, 1 * 5000);
-                })
-    
-                await interaction.reply({embeds: [new Discord.MessageEmbed().setDescription(`${interaction.member} your application has bee created in ${channel}`)], ephemeral: true})
-                .then ((m) => {
-                    setTimeout(() => {
-                        m.delete().catch(() => {});
-                    }, 1 * 5000);
-                });
-            })
-        }
-        if (interaction.customId === 'developer') {
-            const answer1 = interaction.fields.getTextInputValue('ign3')
-            const answer2 = interaction.fields.getTextInputValue('age3')
-            const answer3 = interaction.fields.getTextInputValue('why3')
-            const answer4 = interaction.fields.getTextInputValue('experince3')
-            const answer5 = interaction.fields.getTextInputValue('else3')
-
-            const category = "999672483529637898"
-            await interaction.guild.channels.create(`Developer Application`, {
-                type: "GUILD_TEXT",
-                parent: category,
-                permissionOverwrites: [
-                    {
-                        id: interaction.member.id,
-                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                    {
-                        id: config.staffRole,
-                        allow: ["VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                    {
-                        id: interaction.guild.roles.everyone,
-                        deny: ["SEND_MESSAGES", "VIEW_CHANNEL", "READ_MESSAGE_HISTORY"],
-                    },
-                ],
-            }).then(async(channel) => {
-                
-        
-                const Embed = new Discord.MessageEmbed()
-                .setColor(config.serverColor)
-                .setAuthor({name: `${interaction.member} Application`, iconURL: config.serverIcon})
-                .addField("IGN.", answer1)
-                .addField("Age.", answer2)
-                .addField("Why should we accept you?", answer3.substring(0, 1024))
-                .addField("What is your previous work?", answer4.substring(0, 1024))
-                .addField("Anything else?.", answer5.substring(0, 1024))
-                .setThumbnail(config.serverIcon)
-
-                const msgstaff = channel.send({
-                    embeds: [Embed],
-                });
-                await channel
-                .send({content: `> ${interaction.member} here is your application.`})
-                .then ((m) => {
-                    setTimeout(() => {
-                        m.delete().catch(() => {});
-                    }, 1 * 5000);
-                })
-    
-                await interaction.reply({embeds: [new Discord.MessageEmbed().setDescription(`${interaction.member} your application has bee created in ${channel}`)], ephemeral: true})
-                .then ((m) => {
-                    setTimeout(() => {
-                        m.delete().catch(() => {});
-                    }, 1 * 5000);
-                });
-            })
         }
     }
 }

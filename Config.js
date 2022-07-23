@@ -1,19 +1,19 @@
 module.exports = {
-    prefix: ["a!"],
+    prefix: [";"],
     developers: ["722432254399479829"],
-    token: "OTk5MDczMTA1Njg5NDQ0MzUy.Ghm0O6.QBIw1cA7mVakCMmoxmz00WRgDo9wWAGBKNw2GM",
+    token: "OTk0MzYyMDg0OTQ5MjM3ODQw.GAEOJd.JZu38BIJRganmF0-t_GEbhmM0Yu9OiHWs8Yd3Q",
     database: "mongodb+srv://bot:bot@bot.jeyqkra.mongodb.net/?retryWrites=true&w=majority",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
-    serverName: "AzaleaMC",
-    serverIcon: "https://i.imgur.com/DU09Tcc.jpg",
-    serverBanner: "https://i.imgur.com/9RuavIG.png",
-    serverIp: "AzaleaMC",
-    serverColor: "#fca103",
+    serverName: "MantleMC",
+    serverIcon: "https://i.imgur.com/KNg5vES.png",
+    serverBanner: "https://i.imgur.com/9XDqNrF.png",
+    serverIp: "Mantle.mc.net",
+    serverColor: "#7700ff",
 
-    staffChanges: "995782561596985374",
-    islandsPlaying: "",
+    staffChanges: "991875969889599508",
+    islandsPlaying: "994377958687002674",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
@@ -30,8 +30,8 @@ module.exports = {
     **!! Any tickets opened for any reasons apart from these will be closed !!**
     
     *Note: Average response time is 4 hours*`,
-    tCategory: "996129835275530290",
-    tTranscripts: "999073720062718082",
+    tCategory: "990728017699557476",
+    tTranscripts: "991875969889599508",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
@@ -42,15 +42,15 @@ module.exports = {
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
-    staffRole: "996890300872151120",
+    staffRole: "991875967146545223",
     everyoneRole: "987387586542714880",
-    memberRole: "996116270212722719",
+    memberRole: "988989137539461220",
 
     spacer1: "---------------------------------------------------------------------------------------------",
 
-    serverAnnounce: "995747771908886628",
-    serverChangeLogs: "996143712964968538",
-    welcomeChannel: "996152413729853502",
+    serverAnnounce: "994442577946366042",
+    serverChangeLogs: "988990882491539587",
+    welcomeChannel: "994011630461522010",
 
     spacer1: "---------------------------------------------------------------------------------------------",
     spacer1: "---------------------------------------------------------------------------------------------",

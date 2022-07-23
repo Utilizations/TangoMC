@@ -11,7 +11,7 @@ module.exports = {
         const suggestdata = db.findOne({ SuggestionID: interaction.message.id }, async (err, data) => {
             if (err) throw err
 
-            if(data.Status === "Closed") {
+            if(data.Status === '"Closed"') {
                 interaction.reply({content: 'You may not vote on a closed suggestion', ephemeral: true})
             }else {
                 if (data.Voters.find(a => a.VoterID === interaction.member.id)) {

@@ -2,13 +2,12 @@ const chalk = require("chalk");
 const Box = require("cli-box");
 const mongoose = require("mongoose");
 const { database } = require("../../Config");
-const { Collection } = require("discord.js")
 
 module.exports = {
     name: "ready",
     once: true,
     run: async(client) => {
-        client.user.setActivity('AzaleaMC.', {
+        client.user.setActivity('MantleMC.net.', {
             type: `WATCHING`,
         })
         const ClientBox = new Box({
@@ -74,6 +73,4 @@ Client Events              ::    Initiating ${client.events.size} events.
         })
 
     }
-
-    
 }
