@@ -1,5 +1,5 @@
 module.exports = {
-    prefix: [";"],
+    prefix: ["!"],
     developers: ["722432254399479829"],
     token: "MTAwMDQyMzg3NjM1MTc2NjYzOA.G3CnXs.vZbcJ5PZ1n-oFYaMdqo5D90JxveCHjFXZYyCdQ",
     database: "mongodb+srv://bot:bot@bot.jeyqkra.mongodb.net/?retryWrites=true&w=majority",

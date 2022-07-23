@@ -7,7 +7,7 @@ module.exports = {
     name: "ready",
     once: true,
     run: async(client) => {
-        client.user.setActivity('MantleMC.net.', {
+        client.user.setActivity('AhertMC.', {
             type: `WATCHING`,
         })
         const ClientBox = new Box({
